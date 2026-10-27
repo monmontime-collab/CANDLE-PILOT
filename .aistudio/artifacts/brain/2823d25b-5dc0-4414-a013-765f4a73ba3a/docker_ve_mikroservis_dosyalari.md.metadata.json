@@ -1,0 +1,5 @@
+{
+  "summary":  "Go Mikroservisleri (Auth/JWT, GORM MySQL, Market WebSocket, Strategy/Pine, Sentiment/DeepInfra), Apple Silicon (arm64) ve Windows (amd64) uyumlu Multi-Arch Dockerfile, docker-compose.yml ve GitHub Actions CI/CD kurulum dosyaları.",
+  "updatedAt":  "2026-10-27T20:33:44.882725475Z",
+  "userFacing":  true
+}

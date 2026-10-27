@@ -1,0 +1,6 @@
+{
+  "name": "CryptoPulse Pro - Algo Trading Terminal & Pine Engine",
+  "description": "Binance ve TradingView uyumlu profesyonel mum grafik arayüzü, Pine Script editörü, DeepInfra/Gemini LLM duygu analizi, Bar Replay simülasyonu, Kapsamlı Backtest ve Go + GORM + Docker çoklu platform mikroservis altyapısı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

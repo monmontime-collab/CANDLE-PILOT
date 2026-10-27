@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: cryptopulse-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: cryptopulse_db
+      MYSQL_USER: crypto_user
+      MYSQL_PASSWORD: crypto_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    container_name: cryptopulse-redis
+    ports:
+      - "6379:6379"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cryptopulse-app
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=crypto_user
+      - DB_PASSWORD=crypto_password
+      - DB_NAME=cryptopulse_db
+      - REDIS_HOST=redis:6379
+    depends_on:
+      - mysql
+      - redis
+
+volumes:
+  mysql_data:
